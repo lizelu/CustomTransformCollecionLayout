@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pfd-jC-dXX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--My Collection View Controller-->
+        <scene sceneID="hIR-gp-Y2c">
+            <objects>
+                <collectionViewController id="Pfd-jC-dXX" customClass="MyCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NFC-YX-P8R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="Rn2-cN-9Ad" customClass="CustomTransformCollecionLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="UKs-4A-S0r" customClass="ImageCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="93"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="93"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="000.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jc1-C3-pjG">
+                                            <rect key="frame" x="5" y="5" width="82" height="83"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-tL-aEY">
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="93"/>
+                                            <connections>
+                                                <action selector="tapCellButton:" destination="UKs-4A-S0r" eventType="touchUpInside" id="XUV-lc-s8w"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jc1-C3-pjG" firstAttribute="leading" secondItem="UKs-4A-S0r" secondAttribute="leading" constant="5" id="8sw-nT-Jkb"/>
+                                    <constraint firstItem="KFa-tL-aEY" firstAttribute="top" secondItem="UKs-4A-S0r" secondAttribute="top" id="9Jw-gT-PWq"/>
+                                    <constraint firstItem="KFa-tL-aEY" firstAttribute="leading" secondItem="UKs-4A-S0r" secondAttribute="leading" id="Gmg-sj-21B"/>
+                                    <constraint firstAttribute="bottom" secondItem="KFa-tL-aEY" secondAttribute="bottom" id="Obc-xf-S8I"/>
+                                    <constraint firstAttribute="trailing" secondItem="jc1-C3-pjG" secondAttribute="trailing" constant="5" id="RDp-0h-C7g"/>
+                                    <constraint firstAttribute="bottom" secondItem="jc1-C3-pjG" secondAttribute="bottom" constant="5" id="SRJ-5a-E9f"/>
+                                    <constraint firstAttribute="trailing" secondItem="KFa-tL-aEY" secondAttribute="trailing" id="XBG-1i-dhg"/>
+                                    <constraint firstItem="jc1-C3-pjG" firstAttribute="top" secondItem="UKs-4A-S0r" secondAttribute="top" constant="5" id="fzL-FY-a46"/>
+                                </constraints>
+                                <size key="customSize" width="92" height="93"/>
+                                <connections>
+                                    <outlet property="cellImageView" destination="jc1-C3-pjG" id="6jl-KX-vxk"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Pfd-jC-dXX" id="PB7-TK-zpx"/>
+                            <outlet property="delegate" destination="Pfd-jC-dXX" id="w9G-PG-3MC"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYL-4d-hq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="302"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="000.jpg" width="220" height="220"/>
+    </resources>
+</document>
