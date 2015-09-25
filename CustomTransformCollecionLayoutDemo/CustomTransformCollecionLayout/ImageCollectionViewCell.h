@@ -14,6 +14,6 @@ typedef void(^TapButtonBlock)();
 
 @property (strong, nonatomic) IBOutlet UIImageView *cellImageView;
 
+- (void)setTapButtonBlock:(TapButtonBlock) block;
 
--(void) setTapButtonBlock: (TapButtonBlock) block;
 @end

@@ -16,7 +16,7 @@
 
 @implementation ImageCollectionViewCell
 
--(void) setTapButtonBlock: (TapButtonBlock) block{
+-(void) setTapButtonBlock: (TapButtonBlock) block {
     if (block) {
         _block = block;
     }
@@ -25,7 +25,6 @@
     if (_block) {
         _block();
     }
-    
 }
 
 @end

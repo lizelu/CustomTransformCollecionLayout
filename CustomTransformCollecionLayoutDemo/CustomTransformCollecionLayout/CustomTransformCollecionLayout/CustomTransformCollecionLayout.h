@@ -32,6 +32,6 @@
 
 @interface CustomTransformCollecionLayout : UICollectionViewLayout
 
-@property (assign, nonatomic) id<CustomTransformCollecionLayoutDelegate> layoutDelegate;
+@property (nonatomic, weak) id<CustomTransformCollecionLayoutDelegate> layoutDelegate;
 
 @end

@@ -11,7 +11,9 @@
 #import "CustomTransformCollecionLayout.h"
 
 @interface MyCollectionViewController ()<CustomTransformCollecionLayoutDelegate>
+
 @property (nonatomic, strong) CustomTransformCollecionLayout *customeLayout;
+
 @end
 
 @implementation MyCollectionViewController
@@ -22,9 +24,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     
     _customeLayout = (CustomTransformCollecionLayout *) self.collectionViewLayout;
-    
     _customeLayout.layoutDelegate = self;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,11 +44,13 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <CustomTransformCollecionLayoutDelegate>
 
-- (CGSize) itemSizeWithCollectionView:(UICollectionView *)collectionView collectionViewLayout:(CustomTransformCollecionLayout *)collectionViewLayout{
+- (CGSize)itemSizeWithCollectionView:(UICollectionView *)collectionView
+                 collectionViewLayout:(CustomTransformCollecionLayout *)collectionViewLayout {
     return CGSizeMake(200, 200);
 }
 
-- (CGFloat) marginSizeWithCollectionView:(UICollectionView *)collectionView collectionViewLayout:(CustomTransformCollecionLayout *)collectionViewLayout{
+- (CGFloat)marginSizeWithCollectionView:(UICollectionView *)collectionView
+                    collectionViewLayout:(CustomTransformCollecionLayout *)collectionViewLayout {
     return 10.0f;
 }
 
@@ -59,31 +61,28 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
     return 50;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    NSInteger imageIndex = indexPath.row%10;
     
+    NSInteger imageIndex = indexPath.row % 10;
     NSString *imageName = [NSString stringWithFormat:@"00%ld.jpg", imageIndex];
-    
     [cell.cellImageView setImage:[UIImage imageNamed:imageName]];
     
     __weak __block ImageCollectionViewCell * copy_cell = cell;
-    
     [cell setTapButtonBlock:^{
-        
         static int i = 0;
-        
         if (i == 0) {
             [UIView animateWithDuration:0.5f animations:^{
-                
                 CGFloat scale = SCREEN_WIDTH/cell.frame.size.width;
                 copy_cell.transform = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
             }];
+            
             i = 1;
             return;
         }
@@ -92,6 +91,7 @@ static NSString * const reuseIdentifier = @"Cell";
             [UIView animateWithDuration:0.5f animations:^{
                 copy_cell.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0f,1.0f);
             }];
+            
             i = 0;
             return;
         }

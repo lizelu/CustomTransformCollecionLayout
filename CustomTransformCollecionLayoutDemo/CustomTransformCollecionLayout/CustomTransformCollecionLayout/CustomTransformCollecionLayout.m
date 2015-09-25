@@ -20,7 +20,7 @@
 
 @implementation CustomTransformCollecionLayout
 
-- (void) prepareLayout{
+- (void)prepareLayout {
     [super prepareLayout];
     
     [self initData];
@@ -31,11 +31,8 @@
 /**
  * 该方法返回CollectionView的ContentSize的大小
  */
-- (CGSize)collectionViewContentSize{
-    
+- (CGSize)collectionViewContentSize {
     CGFloat width = _numberOfCellsInSection * (_itemSize.width + _itemMargin);
-    
-    
     return CGSizeMake(width,  SCREEN_HEIGHT);
 }
 
@@ -43,25 +40,19 @@
 /**
  * 该方法为每个Cell绑定一个Layout属性~
  */
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
-{
-    
-    //[self initCellYArray];
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
     
     NSMutableArray *array = [NSMutableArray array];
     
     //add cells
-    for (int i=0; i < _numberOfCellsInSection; i++)
-    {
+    for (int i=0; i < _numberOfCellsInSection; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         
         UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForItemAtIndexPath:indexPath];
         
         [array addObject:attributes];
     }
-    
     return array;
-    
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -69,23 +60,18 @@
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     CGFloat contentOffsetX = self.collectionView.contentOffset.x;
-    
-    
     NSInteger currentIndex = [self countIndexWithOffsetX: contentOffsetX];
-    
     CGFloat centerX = [_itemsX[indexPath.row] floatValue];
     CGFloat centerY = SCREEN_HEIGHT/2;
     
     attributes.center = CGPointMake(centerX, centerY);
-    
     attributes.size = CGSizeMake(_itemSize.width, _itemSize.height);
 
     CGFloat animationDistance = _itemSize.width + _itemMargin;
+    CGFloat change = contentOffsetX - currentIndex * animationDistance + SCREEN_WIDTH / 2 - _itemSize.width / 2;
     
-    CGFloat change = contentOffsetX - currentIndex * animationDistance + SCREEN_WIDTH/2 - _itemSize.width/2;
     
     if (change < 0) {
-        
         change = contentOffsetX - (currentIndex - 1) * animationDistance + SCREEN_WIDTH/2 - _itemSize.width/2;
     }
     
