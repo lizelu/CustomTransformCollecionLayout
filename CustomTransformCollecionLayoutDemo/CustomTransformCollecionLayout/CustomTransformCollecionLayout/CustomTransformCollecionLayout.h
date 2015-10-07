@@ -17,16 +17,14 @@
 /**
  * 确定cell的大小
  */
-- (CGSize) itemSizeWithCollectionView: (UICollectionView *)collectionView
+- (CGSize) itemSizeWithCollectionView:(UICollectionView *)collectionView
                  collectionViewLayout:(CustomTransformCollecionLayout *)collectionViewLayout;
 
 /**
  * 确定cell的大小
  */
-- (CGFloat) marginSizeWithCollectionView: (UICollectionView *)collectionView
+- (CGFloat) marginSizeWithCollectionView:(UICollectionView *)collectionView
                  collectionViewLayout:(CustomTransformCollecionLayout *)collectionViewLayout;
-
-
 
 @end
 
