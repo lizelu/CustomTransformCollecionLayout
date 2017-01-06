@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F428966E1BB54959006EA1FC /* CustomTransformCollecionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F428966D1BB54959006EA1FC /* CustomTransformCollecionLayout.m */; settings = {ASSET_TAGS = (); }; };
+		F428966E1BB54959006EA1FC /* CustomTransformCollecionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F428966D1BB54959006EA1FC /* CustomTransformCollecionLayout.m */; };
 		F4D332241BB38C7C009D80D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D332231BB38C7C009D80D8 /* main.m */; };
 		F4D332271BB38C7C009D80D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D332261BB38C7C009D80D8 /* AppDelegate.m */; };
 		F4D3322D1BB38C7C009D80D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D3322B1BB38C7C009D80D8 /* Main.storyboard */; };
@@ -224,9 +224,11 @@
 				TargetAttributes = {
 					F4D3321D1BB38C7C009D80D8 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = N5WRHCE748;
 					};
 					F4D332361BB38C7C009D80D8 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = N5WRHCE748;
 						TestTargetID = F4D3321D1BB38C7C009D80D8;
 					};
 				};
@@ -415,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5WRHCE748;
 				INFOPLIST_FILE = CustomTransformCollecionLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5WRHCE748;
 				INFOPLIST_FILE = CustomTransformCollecionLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N5WRHCE748;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -454,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N5WRHCE748;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
